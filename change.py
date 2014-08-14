@@ -1,4 +1,20 @@
 def change(num, d1=True, q=True, d=True, n=True, p=True):
+    """Returns all combinations of U.S. currency that total up to the given 'num' 
+    parameter ('num' is in $1 units).
+
+    Note: 'num' value must be a positive int/float. Else, an error will be returned.
+
+    The parameters include 'd1', 'q', 'd', 'n', 'p', which represent 1 dollar bill, quarter,
+    dime, nickel, and penny, respectively. If these values are set to True, then they will
+    be included in the combinations. If these values are set to False, then they will not
+    be included. If they are set to any other values, an error will be returned.
+
+    This function will return a list, containing the combinations of coins (in a formatted
+    list).
+
+    Combination Format:
+    [1 Dollar Bills, Quarters, Dimes, Nickels, Pennies]"""
+
     if not isinstance(num, (int, float)) or (num < 0):
         raise ValueError("'num' value must be positive integer/float.")
     for i in (d1, q, d, n, p):
